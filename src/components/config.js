@@ -39,22 +39,27 @@ export const nodeList = [
 export const BpmnNode = [
   {
     type: 'bpmn:startEvent',
-    text: '开始',
+    text: 'Start Event',
     class: 'bpmn-start'
   },
   {
     type: 'bpmn:endEvent',
-    text: '结束',
+    text: 'End Event',
     class: 'bpmn-end'
   },
   {
     type: 'bpmn:exclusiveGateway',
-    text: '网关',
+    text: 'Gateway',
     class: 'bpmn-exclusiveGateway'
   },
   {
     type: 'bpmn:userTask',
-    text: '用户',
+    text: 'User Task',
     class: 'bpmn-user'
   },
+  {
+    type: 'bpmn:serviceTask',
+    text: 'Service Task',
+    class: 'bpmn-service'
+  }
 ]
