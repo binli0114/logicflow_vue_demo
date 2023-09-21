@@ -18,6 +18,30 @@ export default function registerTask (lf) {
     class Model extends RectNodeModel {
       constructor (data, graphModel) {
         super(data, graphModel)
+        this.menu = [
+          {
+            className: 'lf-menu-delete',
+            text: 'delete',
+            callback (node) {
+              // const comfirm = window.confirm('你确定要删除吗？')
+              lf.deleteNode(node.id)
+            }
+          },
+          {
+            text: 'edit',
+            className: 'lf-menu-item',
+            callback (node) {
+              lf.editText(node.id)
+            }
+          },
+          {
+            text: 'copy',
+            className: 'lf-menu-item',
+            callback (node) {
+              lf.cloneNode(node.id)
+            }
+          }
+        ]
         this.radius = 20;
       }
     }

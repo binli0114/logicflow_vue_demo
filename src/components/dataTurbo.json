@@ -8,13 +8,13 @@
       "properties": {
         "a": "efrwe",
         "b": "wewe",
-        "name": "开始",
+        "name": "Start",
         "x": 280,
         "y": 200,
         "text": {
           "x": 280,
           "y": 200,
-          "value": "开始"
+          "value": "Start"
         },
         "logicFlowType": "bpmn:startEvent"
       },
@@ -28,13 +28,13 @@
       "properties": {
         "a": "efrwe",
         "b": "wewe",
-        "name": "结束",
+        "name": "End",
         "x": 920,
         "y": 200,
         "text": {
           "x": 920,
           "y": 200,
-          "value": "结束"
+          "value": "End"
         },
         "logicFlowType": "bpmn:endEvent"
       },
@@ -48,13 +48,13 @@
       "properties": {
         "a": "efrwe",
         "b": "wewe",
-        "name": "网关",
+        "name": "Gateway",
         "x": 580,
         "y": 200,
         "text": {
           "x": 580,
           "y": 200,
-          "value": "网关"
+          "value": ""
         },
         "logicFlowType": "bpmn:exclusiveGateway"
       },
@@ -68,13 +68,13 @@
       "properties": {
         "a": "efrwe",
         "b": "wewe",
-        "name": "用户",
+        "name": "UserTask",
         "x": 420,
         "y": 200,
         "text": {
           "x": 420,
           "y": 200,
-          "value": "用户"
+          "value": "UserTask"
         },
         "logicFlowType": "bpmn:userTask"
       },
@@ -88,13 +88,13 @@
       "properties": {
         "a": "efrwe",
         "b": "wewe",
-        "name": "服务",
+        "name": "ServiceTask",
         "x": 760,
         "y": 200,
         "text": {
           "x": 760,
           "y": 200,
-          "value": "服务"
+          "value": "ServiceTask"
         },
         "logicFlowType": "bpmn:serviceTask"
       },
@@ -106,11 +106,11 @@
       "type": 1,
       "dockers": [],
       "properties": {
-        "name": "边",
+        "name": "Edge",
         "text": {
           "x": 331,
           "y": 200,
-          "value": "边"
+          "value": ""
         },
         "startPoint": {
           "x": 298,
@@ -140,11 +140,11 @@
       "type": 1,
       "dockers": [],
       "properties": {
-        "name": "边2",
+        "name": "Edge1",
         "text": {
           "x": 507,
           "y": 200,
-          "value": "边2"
+          "value": ""
         },
         "startPoint": {
           "x": 470,
@@ -174,11 +174,11 @@
       "type": 1,
       "dockers": [],
       "properties": {
-        "name": "边3",
+        "name": "Edge2",
         "text": {
           "x": 664,
           "y": 200,
-          "value": "边3"
+          "value": ""
         },
         "startPoint": {
           "x": 605,
@@ -208,11 +208,11 @@
       "type": 1,
       "dockers": [],
       "properties": {
-        "name": "边4",
+        "name": "Edge3",
         "text": {
           "x": 871,
           "y": 200,
-          "value": "边4"
+          "value": ""
         },
         "startPoint": {
           "x": 810,

@@ -1,17 +1,17 @@
 <template>
   <div>
      <el-button-group>
-      <el-button type="plain" size="small" @click="$_zoomIn">放大</el-button>
-      <el-button type="plain" size="small" @click="$_zoomOut">缩小</el-button>
-      <el-button type="plain" size="small" @click="$_zoomReset">大小适应</el-button>
-      <el-button type="plain" size="small" @click="$_translateRest">定位还原</el-button>
-      <el-button type="plain" size="small" @click="$_reset">还原(大小&定位)</el-button>
-      <el-button type="plain" size="small" @click="$_undo" :disabled="undoDisable">上一步(ctrl+z)</el-button>
-      <el-button type="plain" size="small" @click="$_redo" :disabled="redoDisable">下一步(ctrl+y)</el-button>
-      <el-button type="plain" size="small" @click="$_download">下载图片</el-button>
-      <el-button type="plain" size="small" @click="$_catData">查看数据</el-button>
-      <el-button v-if="catTurboData" type="plain" size="small" @click="$_catTurboData">查看turbo数据</el-button>
-      <el-button type="plain" size="small" @click="$_showMiniMap">查看缩略图</el-button>
+      <el-button type="plain" size="small" @click="$_zoomIn">Zoom In</el-button>
+      <el-button type="plain" size="small" @click="$_zoomOut">Zoom Out</el-button>
+      <el-button type="plain" size="small" @click="$_zoomReset">Zoom Reset</el-button>
+      <el-button type="plain" size="small" @click="$_translateRest">Reset Position</el-button>
+      <el-button type="plain" size="small" @click="$_reset">Reset Size&Position</el-button>
+      <el-button type="plain" size="small" @click="$_undo" :disabled="undoDisable">Prev (ctrl+z)</el-button>
+      <el-button type="plain" size="small" @click="$_redo" :disabled="redoDisable">Next (ctrl+y)</el-button>
+      <el-button type="plain" size="small" @click="$_download">Download</el-button>
+      <el-button type="plain" size="small" @click="$_catData">Data</el-button>
+      <el-button v-if="catTurboData" type="plain" size="small" @click="$_catTurboData">Turbo Data</el-button>
+      <el-button type="plain" size="small" @click="$_showMiniMap">Mini Map</el-button>
     </el-button-group>
   </div>
 </template>
