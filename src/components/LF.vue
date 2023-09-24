@@ -38,7 +38,7 @@
     </el-drawer>
     <!-- 数据查看面板 -->
     <el-dialog
-      title="数据"
+      title="Data"
       :visible.sync="dataVisible"
       width="50%">
       <DataDialog :graphData="graphData"></DataDialog>
