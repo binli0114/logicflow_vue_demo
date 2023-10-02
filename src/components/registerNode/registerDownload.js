@@ -70,12 +70,12 @@ export default function registerDownload(lf) {
           y: data.y + 50
         }
         super(data, graphModel)
-        const lenght = 25
+        const currentLength = 25
         this.points = [
-          [lenght, 0],
-          [lenght * 2, lenght],
-          [lenght, lenght * 2],
-          [0, lenght]
+          [currentLength, 0],
+          [currentLength * 2, currentLength],
+          [currentLength, currentLength * 2],
+          [0, currentLength]
         ]
       }
       getNodeStyle() {

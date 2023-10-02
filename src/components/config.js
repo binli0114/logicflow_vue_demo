@@ -1,37 +1,37 @@
 export const nodeList = [
   {
-    text: '开始',
+    text: 'Start',
     type: 'start',
     class: 'node-start'
   },
   {
-    text: '矩形',
+    text: 'Task',
     type: 'rect',
     class: 'node-rect'
   },
   {
     type: 'user',
-    text: '用户',
+    text: 'User',
     class: 'node-user'
   },
   {
     type: 'push',
-    text: '推送',
+    text: 'Message',
     class: 'node-push'
   },
   {
     type: 'download',
-    text: '位置',
+    text: 'Download',
     class: 'node-download'
   },
   {
     type: 'connect',
-    text: 'Html',
+    text: 'Email',
     class: 'node-push'
   },
   {
     type: 'end',
-    text: '结束',
+    text: 'End',
     class: 'node-end'
   },
 ];

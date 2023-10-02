@@ -5,6 +5,11 @@
       :nodeData="nodeData"
       :lf="lf"
       @onClose="handleClose"/>
+    <StartNode
+        v-else-if="nodeData.type === 'start' || nodeData.type ==='end'"
+        :nodeData="nodeData"
+        :lf="lf"
+        @onClose="handleClose"/>
     <CommonProperty
       v-else
       :nodeData="nodeData"
@@ -13,14 +18,16 @@
   </div>
 </template>
 <script>
-import CommonProperty from './CommonProperty'
-import User from './User.vue'
+import CommonProperty from './CommonProperty';
+import User from './User.vue';
+import StartNode from './StartNode';
 
 export default {
   name: 'PropertyDialog',
   components: {
     CommonProperty,
-    User
+    User,
+    StartNode
   },
   props: {
     nodeData: Object,

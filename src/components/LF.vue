@@ -7,6 +7,7 @@
       v-if="lf"
       :lf="lf"
       @catData="$_catData"
+      @file-selected="handleFileUpload"
     ></Control>
     <!-- 节点面板 -->
     <NodePanel v-if="lf" :lf="lf" :nodeList="nodeList"></NodePanel>
@@ -24,7 +25,7 @@
     </AddPanel>
     <!-- 属性面板 -->
     <el-drawer
-      title="设置节点属性"
+      title="Properties"
       :visible.sync="dialogVisible"
       direction="rtl"
       size="500px"
@@ -43,9 +44,9 @@
       width="50%">
       <DataDialog :graphData="graphData"></DataDialog>
     </el-dialog>
-    <h4>更多示例：
-      <el-button type="text" @click="goto">BpmnElement & TurboAdpter</el-button>
-    </h4>
+<!--    <h4>更多示例：-->
+<!--      <el-button type="text" @click="goto">BpmnElement & TurboAdpter</el-button>-->
+<!--    </h4>-->
   </div>
 </template>
 <script>
@@ -75,7 +76,7 @@ const demoData = require('./data.json')
 
 export default {
   name: 'LF',
-   components: { NodePanel, AddPanel, Control, PropertyDialog, DataDialog },
+  components: { NodePanel, AddPanel, Control, PropertyDialog, DataDialog },
   data () {
     return {
       lf: null,
@@ -240,6 +241,20 @@ export default {
     },
     goto () {
       this.$router.push('/TurboAdpter')
+    },
+    handleFileUpload(file) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        try {
+          const jsonData = JSON.parse(e.target.result);
+          console.log(jsonData);
+          this.lf.render(jsonData);
+          // Process the uploaded JSON data here
+        } catch (error) {
+          alert('Invalid JSON file.');
+        }
+      };
+      reader.readAsText(file);
     }
   }
 }
@@ -287,4 +302,3 @@ export default {
   }
 }
 </style>
-

@@ -7,10 +7,10 @@ export default function registerUser (lf) {
         return h(
           'svg',
           {
-            x: 20,
+            x: 18,
             y: 18,
-            width: 30,
-            height: 30,
+            width: 20,
+            height: 20,
             viewBox: '0 0 1126 1024'
           },
           h(
@@ -86,12 +86,12 @@ export default function registerUser (lf) {
       }
       initNodeData(data) {
         super.initNodeData(data)
-        const lenght = 35
+        const currentLength = 35
         this.points = [
-          [lenght, 0],
-          [lenght * 2, lenght],
-          [lenght, lenght * 2],
-          [0, lenght]
+          [currentLength, 0],
+          [currentLength * 2, currentLength],
+          [currentLength, currentLength * 2],
+          [0, currentLength]
         ]
       }
       // 自定义锚点样式
