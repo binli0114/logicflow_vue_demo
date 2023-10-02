@@ -1,50 +1,43 @@
 <template>
   <div class="property-dialog">
-    <User
-      v-if="nodeData.type === 'user'"
-      :nodeData="nodeData"
-      :lf="lf"
-      @onClose="handleClose"/>
+    <User v-if="nodeData.type === 'user'" :nodeData="nodeData" :lf="lf" @onClose="handleClose" />
     <StartNode
-        v-else-if="nodeData.type === 'start' || nodeData.type ==='end'"
-        :nodeData="nodeData"
-        :lf="lf"
-        @onClose="handleClose"/>
-    <CommonProperty
-      v-else
+      v-else-if="nodeData.type === 'start' || nodeData.type === 'end'"
       :nodeData="nodeData"
       :lf="lf"
-      @onClose="handleClose"/>
+      @onClose="handleClose"
+    />
+    <CommonProperty v-else :nodeData="nodeData" :lf="lf" @onClose="handleClose" />
   </div>
 </template>
 <script>
-import CommonProperty from './CommonProperty';
-import User from './User.vue';
-import StartNode from './StartNode';
+  import CommonProperty from './CommonProperty'
+  import User from './User.vue'
+  import StartNode from './StartNode'
 
-export default {
-  name: 'PropertyDialog',
-  components: {
-    CommonProperty,
-    User,
-    StartNode
-  },
-  props: {
-    nodeData: Object,
-    lf: Object
-  },
-  data () {
-    return {}
-  },
-  methods: {
-    handleClose () {
-      this.$emit('setPropertiesFinish')
+  export default {
+    name: 'PropertyDialog',
+    components: {
+      CommonProperty,
+      User,
+      StartNode
+    },
+    props: {
+      nodeData: Object,
+      lf: Object
+    },
+    data() {
+      return {}
+    },
+    methods: {
+      handleClose() {
+        this.$emit('setPropertiesFinish')
+      }
     }
   }
-}
 </script>
 <style>
-.property-dialog{
-  padding: 20px;
-}
+  .property-dialog {
+    padding: 20px;
+  }
 </style>

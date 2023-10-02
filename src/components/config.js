@@ -25,16 +25,16 @@ export const nodeList = [
     class: 'node-download'
   },
   {
-    type: 'connect',
+    type: 'email',
     text: 'Email',
-    class: 'node-push'
+    class: 'node-email'
   },
   {
     type: 'end',
     text: 'End',
     class: 'node-end'
-  },
-];
+  }
+]
 
 export const BpmnNode = [
   {

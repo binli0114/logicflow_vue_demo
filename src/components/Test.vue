@@ -5,17 +5,16 @@
   </div>
 </template>
 <script>
-export default {
-  name: 'Test',
-  data () {
-    return {}
-  },
-  methods: {
-    goto () {
-      this.$router.push('/')
+  export default {
+    name: 'Test',
+    data() {
+      return {}
+    },
+    methods: {
+      goto() {
+        this.$router.push('/')
+      }
     }
   }
-}
 </script>
-<style scoped>
-</style>
+<style scoped></style>

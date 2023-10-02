@@ -1,6 +1,6 @@
 <template>
   <div class="connect">
-    <p>{{name}}</p>
+    <p>{{ name }}</p>
     <p>您好，请问需要买保险吗？</p>
     <div class="button-list">
       <button @mousedown.stop="done(1)">有保险了</button>
@@ -12,32 +12,32 @@
 </template>
 
 <script>
-export default {
-  props: {
-    name: String
-  },
-  methods: {
-    done(type) {
-      this.$emit('select-button', type)
+  export default {
+    props: {
+      name: String
+    },
+    methods: {
+      done(type) {
+        this.$emit('select-button', type)
+      }
     }
   }
-}
 </script>
 
 <style scoped>
-.connect {
-  width: 100%;
-  height: 100%;
-  background: #FFF;
-  border: 1px solid #9a9a9b;
-  box-sizing: border-box;
-  padding: 10px;
-}
-.connect p {
-  margin: 0;
-}
-.button-list {
-  position: absolute;
-  bottom: 10px;
-}
+  .connect {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border: 1px solid #9a9a9b;
+    box-sizing: border-box;
+    padding: 10px;
+  }
+  .connect p {
+    margin: 0;
+  }
+  .button-list {
+    position: absolute;
+    bottom: 10px;
+  }
 </style>
