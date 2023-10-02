@@ -56,7 +56,8 @@
     background-size: cover;
   }
   .node-rect {
-    border: 1px solid black;
+    background: url('../background/settings.png') no-repeat;
+    background-size: cover;
   }
   .node-user {
     background: url('../background/user.png') no-repeat;

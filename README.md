@@ -2,40 +2,14 @@
 
 > Logic-flow 的vue应用实例  
 > logic Flow 详细内容参照[【文档】](http://logic-flow.org/)
-### 功能
-实例中包含的功能实现：
-- 画布
-- 快捷操作
-- 节点面板
-- 节点自定义
-- 节点菜单
-- 图形下载
+### Update
 
-画布：src/components/LF.vue  
-节点自定义： src/components/registerNode  
-节点面板：src/components/NodePanel.vue 
+Workflow left-side icons：
 
-## 线上预览
-https://xinxin93.github.io/logicflow_vue_demo/#/
-## Project setup
-```
-yarn install
-```
+- Update the LFComponents/NodePanel.vue component, add or update the `<Style>` items
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+Drag&Drop Nodes:
 
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- Create or update the `registerXXX` JS component
+- Create or update the `PropertySetting`
+- Create a new `registerXXX`, for example: `EmailProperty.vue`

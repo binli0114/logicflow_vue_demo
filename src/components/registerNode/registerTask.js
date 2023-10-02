@@ -2,37 +2,43 @@ export default function registerTask(lf) {
   lf.register('task', ({ RectNode, RectNodeModel, h }) => {
     class View extends RectNode {
       getLabelShape() {
-        const { model } = this.props
-        const { stroke } = model.getNodeStyle()
+        const { model } = this.props;
+        const { x, y, width, height } = model;
+        const style = model.getNodeStyle()
         return h(
           'svg',
           {
-            x: 18,
-            y: 18,
-            width: 20,
-            height: 20,
-            viewBox: '0 0 1126 1024'
+            x: x - width / 2 + 5,
+            y: y - height / 2 + 5,
+            width: 24,
+            height: 24,
+            viewBox: '0 0 24 24'
           },
-          h('path', {
-            fill: stroke,
-            d: 'M792.576 379.392a25.6 25.6 0 0 0 25.2928 25.8048h283.2384A25.6 25.6 0 0 0 1126.4 379.392a25.6 25.6 0 0 0-25.2928-25.8048h-283.2384a25.6 25.6 0 0 0-25.344 25.8048z m303.9232 80.7424H761.856c-16.5376 0-29.9008 11.6224-29.9008 25.7536 0 14.1824 13.312 25.7536 29.9008 25.7536h334.6432c16.4864 0 29.9008-11.5712 29.9008-25.7536 0-14.1312-13.4144-25.7536-29.9008-25.7536z m4.608 106.496h-283.2384a25.6 25.6 0 0 0-25.344 25.7536 25.6 25.6 0 0 0 25.344 25.7536h283.2384A25.6 25.6 0 0 0 1126.4 592.384a25.6 25.6 0 0 0-25.2928-25.8048zM543.0272 1024H341.6576C150.8352 1024 0 1024 0 923.648v-20.1216c0-188.16 153.2928-341.1968 341.7088-341.1968h201.2672c188.416 0 341.76 153.0368 341.76 341.1968v20.0704C884.6848 1024 726.3232 1024 542.976 1024z m-203.1616-405.1456c-158.464 0-287.4368 128.4096-287.4368 286.208v20.48c0 40.9088 166.0928 40.9088 287.4368 40.9088h204.9536c100.4544 0 287.4368 0 287.4368-40.96v-20.3776c0-157.8496-128.9728-286.208-287.4368-286.208H339.8656z m92.416-76.7488a271.4112 271.4112 0 0 1-271.2064-271.0528A271.36 271.36 0 0 1 432.2816 0a271.36 271.36 0 0 1 271.2064 271.0528 271.4624 271.4624 0 0 1-271.2064 271.0528z m-215.3472-271.872c0 118.1696 96.6144 214.3232 215.3472 214.3232 118.784 0 215.3984-96.1536 215.3984-214.3232 0-118.2208-96.6144-214.3232-215.3984-214.3232S216.9344 152.0128 216.9344 270.2336z'
+          h("path", {
+            fill: "none",
+            d: "M0 0h24v24H0z"
+          }),
+          h("path", {
+            fill: style.stroke,
+            d: "M 19.14 12.94 c 0.04 -0.3 0.06 -0.61 0.06 -0.94 c 0 -0.32 -0.02 -0.64 -0.07 -0.94 l 2.03 -1.58 c 0.18 -0.14 0.23 -0.41 0.12 -0.61 l -1.92 -3.32 c -0.12 -0.22 -0.37 -0.29 -0.59 -0.22 l -2.39 0.96 c -0.5 -0.38 -1.03 -0.7 -1.62 -0.94 L 14.4 2.81 c -0.04 -0.24 -0.24 -0.41 -0.48 -0.41 h -3.84 c -0.24 0 -0.43 0.17 -0.47 0.41 L 9.25 5.35 C 8.66 5.59 8.12 5.92 7.63 6.29 L 5.24 5.33 c -0.22 -0.08 -0.47 0 -0.59 0.22 L 2.74 8.87 C 2.62 9.08 2.66 9.34 2.86 9.48 l 2.03 1.58 C 4.84 11.36 4.8 11.69 4.8 12 s 0.02 0.64 0.07 0.94 l -2.03 1.58 c -0.18 0.14 -0.23 0.41 -0.12 0.61 l 1.92 3.32 c 0.12 0.22 0.37 0.29 0.59 0.22 l 2.39 -0.96 c 0.5 0.38 1.03 0.7 1.62 0.94 l 0.36 2.54 c 0.05 0.24 0.24 0.41 0.48 0.41 h 3.84 c 0.24 0 0.44 -0.17 0.47 -0.41 l 0.36 -2.54 c 0.59 -0.24 1.13 -0.56 1.62 -0.94 l 2.39 0.96 c 0.22 0.08 0.47 0 0.59 -0.22 l 1.92 -3.32 c 0.12 -0.22 0.07 -0.47 -0.12 -0.61 L 19.14 12.94 Z M 12 15.6 c -1.98 0 -3.6 -1.62 -3.6 -3.6 s 1.62 -3.6 3.6 -3.6 s 3.6 1.62 3.6 3.6 S 13.98 15.6 12 15.6 Z"
           })
         )
       }
 
       getShape() {
         const { model } = this.props
-        const { width, height, x, y } = model
-        const transform = `matrix(1 0 0 1 ${x - width / 2} ${y - height / 2})`
-        const position = {
-          x: x - width / 2,
-          y: y - height / 2
-        }
+        const { width, height, x, y, radius } = model
+
         const style = model.getNodeStyle()
-        return h('g', { transform }, [
+        return h('g', {  }, [
           h('rect', {
             ...style,
-            ...position
+            x: x - width / 2,
+            y: y - height / 2,
+            rx: radius,
+            ry: radius,
+            width,
+            height
           }),
           this.getLabelShape()
         ])
@@ -41,6 +47,11 @@ export default function registerTask(lf) {
 
     class Model extends RectNodeModel {
       constructor(data, graphModel) {
+        data.text = {
+          value: (data.text && data.text.value) || '',
+          x: data.x,
+          y: data.y + 50
+        }
         super(data, graphModel)
         this.menu = [
           {
@@ -66,7 +77,18 @@ export default function registerTask(lf) {
             }
           }
         ]
-        this.radius = 20
+
+      }
+      initNodeData(data) {
+
+        super.initNodeData(data)
+        this.radius = 10;
+      }
+      getNodeStyle() {
+        const style = super.getNodeStyle();
+        //style.stroke = "blue";
+        //style.strokeDasharray = "3 3";
+        return style;
       }
     }
 

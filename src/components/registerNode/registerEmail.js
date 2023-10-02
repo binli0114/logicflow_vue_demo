@@ -87,7 +87,7 @@ export default function registerEmail(lf) {
       }
       getNodeStyle() {
         const style = super.getNodeStyle();
-        style.stroke = "blue";
+        //style.stroke = "blue";
         //style.strokeDasharray = "3 3";
         return style;
       }

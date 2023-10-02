@@ -1,6 +1,7 @@
 <template>
   <div class="property-dialog">
     <User v-if="nodeData.type === 'user'" :nodeData="nodeData" :lf="lf" @onClose="handleClose" />
+    <EmailProperty v-else-if="nodeData.type==='email'" :nodeData="nodeData" :lf="lf" @onClose="handleClose"/>
     <StartNode
       v-else-if="nodeData.type === 'start' || nodeData.type === 'end'"
       :nodeData="nodeData"
@@ -14,13 +15,15 @@
   import CommonProperty from './CommonProperty'
   import User from './User.vue'
   import StartNode from './StartNode'
+  import EmailProperty from './EmailProperty';
 
   export default {
     name: 'PropertyDialog',
     components: {
       CommonProperty,
       User,
-      StartNode
+      StartNode,
+      EmailProperty
     },
     props: {
       nodeData: Object,

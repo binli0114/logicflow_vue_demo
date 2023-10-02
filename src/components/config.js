@@ -6,7 +6,7 @@ export const nodeList = [
   },
   {
     text: 'Task',
-    type: 'rect',
+    type: 'task',
     class: 'node-rect'
   },
   {
