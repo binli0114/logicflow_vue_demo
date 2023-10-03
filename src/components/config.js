@@ -10,6 +10,11 @@ export const nodeList = [
     class: 'node-rect'
   },
   {
+    text: 'Gateway',
+    type: 'gateway',
+    class: 'node-gateway'
+  },
+  {
     type: 'user',
     text: 'User',
     class: 'node-user'

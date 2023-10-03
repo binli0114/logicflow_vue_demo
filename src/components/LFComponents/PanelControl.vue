@@ -19,9 +19,11 @@
         @change="$_emitFile"
         style="display: none"
       />
-      <el-button type="plain" size="small" @click="$_triggerFileUpload">Upload</el-button>
-      <el-button type="plain" size="small" @click="$_download">Download</el-button>
-      <el-button type="plain" size="small" @click="$_catData">Data</el-button>
+      <el-button type="plain" size="small" @click="$_newGraph">New</el-button>
+      <el-button type="plain" size="small" @click="$_triggerFileUpload">Import</el-button>
+      <el-button type="plain" size="small" @click="$_downloadData">Save</el-button>
+<!--      <el-button type="plain" size="small" @click="$_download">Download</el-button>-->
+      <el-button type="plain" size="small" @click="$_catData">JSON</el-button>
       <el-button v-if="catTurboData" type="plain" size="small" @click="$_catTurboData"
         >Turbo Data</el-button
       >
@@ -79,11 +81,17 @@
       $_triggerFileUpload() {
         this.$refs.fileInput.click()
       },
+      $_newGraph(){
+        this.$emit('resetData');
+      },
       $_emitFile(event) {
         const file = event.target.files[0]
         if (file) {
           this.$emit('file-selected', file)
         }
+      },
+      $_downloadData(){
+        this.$emit('downloadData');
       },
       $_catData() {
         this.$emit('catData')

@@ -10,6 +10,7 @@ import registerPolyline from './registerPolyline'
 import registerTask from './registerTask'
 import registerConnect from './registerConnect'
 import registerEmail from './registerEmail'
+import registerGateway from './registerGateway';
 
 export {
   registerStart,
@@ -20,5 +21,6 @@ export {
   registerPolyline,
   registerTask,
   registerConnect,
-  registerEmail
+  registerEmail,
+  registerGateway
 }

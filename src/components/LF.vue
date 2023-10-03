@@ -8,6 +8,8 @@
         :lf="lf"
         @catData="$_catData"
         @file-selected="handleFileUpload"
+        @resetData="resetData"
+        @downloadData="downloadData"
     ></Control>
     <!-- 节点面板 -->
     <NodePanel v-if="lf" :lf="lf" :nodeList="nodeList"></NodePanel>
@@ -69,7 +71,8 @@ import {
   registerPolyline,
   registerTask,
   registerConnect,
-  registerEmail
+  registerEmail,
+  registerGateway
 } from './registerNode'
 
 const demoData = require('./data.json')
@@ -165,6 +168,7 @@ export default {
       registerTask(this.lf)
       registerConnect(this.lf)
       registerEmail(this.lf)
+      registerGateway(this.lf)
       this.$_render()
     },
     $_render() {
@@ -236,6 +240,19 @@ export default {
       this.$data.graphData = this.$data.lf.getGraphData()
       this.$data.dataVisible = true
     },
+    resetData(){
+      this.lf.clearData();
+    },
+    downloadData() {
+      const blob = new Blob([JSON.stringify(this.lf.getGraphData(), null, 2)], {
+        type: 'application/json'
+      })
+      const link = document.createElement('a')
+      link.href = URL.createObjectURL(blob)
+      link.download = 'graphData.json'
+      link.click()
+      URL.revokeObjectURL(link.href)
+    },
     goto() {
       this.$router.push('/TurboAdpter')
     },
@@ -243,9 +260,9 @@ export default {
       const reader = new FileReader()
       reader.onload = e => {
         try {
-          const jsonData = JSON.parse(e.target.result)
-          console.log(jsonData)
-          this.lf.render(jsonData)
+          const jsonData = JSON.parse(e.target.result);
+          console.log(jsonData);
+          this.lf.render(jsonData);
           // Process the uploaded JSON data here
         } catch (error) {
           alert('Invalid JSON file.')

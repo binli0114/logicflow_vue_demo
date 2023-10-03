@@ -59,6 +59,10 @@
     background: url('../background/settings.png') no-repeat;
     background-size: cover;
   }
+  .node-gateway {
+    background: url('../background/component_exchange.png') no-repeat;
+    background-size: cover;
+  }
   .node-user {
     background: url('../background/user.png') no-repeat;
     background-size: cover;

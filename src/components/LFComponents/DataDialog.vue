@@ -1,6 +1,5 @@
 <template>
   <div>
-    <button @click="downloadData">Download JSON</button>
     <vue-json-pretty :path="'res'" :data="graphData"> </vue-json-pretty>
   </div>
 </template>
